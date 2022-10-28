@@ -1,0 +1,19 @@
+{
+  "name": "front-end-fisheye-p6",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style2.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polzocr/Front-End-Fisheye-p6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polzocr/Front-End-Fisheye-p6/issues"
+  },
+  "homepage": "https://github.com/polzocr/Front-End-Fisheye-p6#readme"
+}

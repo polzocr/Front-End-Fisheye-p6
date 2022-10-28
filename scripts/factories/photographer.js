@@ -4,21 +4,31 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
+
+        //creation et ajout image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        const pCity = document.createElement('p')
-        const pTagline = document.createElement('p')
-        const pPrice = document.createElement('p')
-        h2.textContent = name;
-        pCity.textContent = city + ', ' + country;
-        pTagline.textContent = tagline;
-        pPrice.textContent = price + '€/jour';
+        img.setAttribute("alt", name)
         article.appendChild(img);
+
+        //creation et ajout h2
+        const h2 = document.createElement( 'h2' );
+        h2.textContent = name;
         article.appendChild(h2);
+
+
+        const pCity = document.createElement('p')
+        pCity.textContent = city + ', ' + country;
         article.appendChild(pCity);
+        
+        const pTagline = document.createElement('p')
+        pTagline.textContent = tagline;
         article.appendChild(pTagline);
+        
+        const pPrice = document.createElement('p')
+        pPrice.textContent = price + '€/jour';
         article.appendChild(pPrice);
+        
         return (article);
     }
     return { getUserCardDOM }
