@@ -5,16 +5,22 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
 
+        const link = document.createElement('a')
+        // let url = new URL("photographer.html")
+        link.setAttribute("href", "photographer.html?id=" + id)
+        article.appendChild(link)
+
+
         //creation et ajout image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         img.setAttribute("alt", name)
-        article.appendChild(img);
+        link.appendChild(img);
 
         //creation et ajout h2
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
-        article.appendChild(h2);
+        link.appendChild(h2);
 
 
         const pCity = document.createElement('p')
