@@ -1,14 +1,14 @@
   class App{
-    constructor(){
-        this.api = new Api('../data/photographers.json')
+    constructor(dataElement){
+        this.api = new ApiFactory('../data/photographers.json', dataElement)
         this.photographers = []
+        this.dataElement = dataElement
     }
 
 
     async fetchData(){
         const dataApi = await this.api.get()
         this.photographers = dataApi
-        console.log(this.photographers)
     }
 
     async displayData(photographers, page){
