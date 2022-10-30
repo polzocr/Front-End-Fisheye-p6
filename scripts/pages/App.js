@@ -11,16 +11,8 @@
         this.photographers = dataApi
     }
 
-    async displayData(photographers, page){
-        const photographersSection = this.element;
-        if(page === 'accueil'){
-            photographers.forEach((photographer) => {
-            
-            const photographerModel = new PhotographerFactory(photographer, page);
-            const userCardDOM = photographerModel.createTemplate();
-            photographersSection.appendChild(userCardDOM);
-            })
-        } else if(page === 'photographer'){
+    
+    async displayDataPhotograh(photographers, page){
             const params = (new URL(document.location)).searchParams
             const id = params.get('id')
             let photograph = {}
@@ -36,14 +28,17 @@
             photographersSection.insertBefore(divUserCardDOM, photographersSection.firstChild);
             photographersSection.appendChild(imgUserCardDOM);
             document.querySelector('main').appendChild(priceUserCardDOM)
-        }
+    }
+
+    
+    // async mainAccueil(){
+    //     await this.fetchData()
+    //     this.displayDataAccueil()
+    // }
         
     }
 
-    async main(){
-        await this.fetchData()
-        this.displayData(this.photographers, this.page)
-    }
-}
+    
+
 
 

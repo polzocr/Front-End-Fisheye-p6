@@ -6,8 +6,8 @@ class PhotographerPage extends App{
     }
 }
 
-const photographerPage = new PhotographerPage('photographer', 'photographers')
-photographerPage.main()
+// const photographerPage = new PhotographerPage('photographer', 'photographers')
+// photographerPage.main()
 
 
 const params = (new URL(document.location)).searchParams
