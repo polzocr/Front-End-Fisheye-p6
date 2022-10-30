@@ -16,6 +16,8 @@ class Photographer {
         // article.appendChild(link)
         const bigDiv = document.createElement('div')
         const firstDiv = document.createElement('div')
+        firstDiv.setAttribute('class', 'photograph-header-infos')
+        
         const aside = document.createElement('aside')
 
         const h1 = document.createElement( 'h1' );

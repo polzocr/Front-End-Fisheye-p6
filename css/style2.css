@@ -94,9 +94,41 @@ article :nth-child(5) {
 }
 
 .photograph-header {
+  box-sizing: border-box;
   background-color: #FAFAFA;
   height: 300px;
-  margin: 0 100px;
+  margin: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10% 3%;
+}
+.photograph-header-infos h1 {
+  font-size: 64px;
+  color: #D3573C;
+  font-weight: 400;
+  margin: 0;
+}
+.photograph-header-infos :nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+}
+.photograph-header-infos :nth-child(3) {
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  color: #525252;
+}
+.photograph-header img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
+h2 {
+  margin: 7% 0 0 0;
 }
 
 /*# sourceMappingURL=style2.css.map */

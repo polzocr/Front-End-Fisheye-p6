@@ -1,8 +1,49 @@
 .photograph-header {
+    box-sizing: border-box;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10% 3%;
+    &-infos{
+        h1{
+            font-size: 64px;
+            color: $secondary-color;
+            font-weight: 400;
+            margin: 0;
+        }
+        :nth-child(2){
+            font-size: 24px;
+            font-weight: 400;
+            color: $primary-color;
+        }
+        :nth-child(3){
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            color: $tertiary-color;
+        }
+        
+    }
+    img{
+            border-radius: 50%;
+            object-fit: cover;
+            height: 200px;
+            width: 200px;
+    }
 }
+
+
+img{
+        
+    }
+   h2{
+    margin: 7% 0 0 0;
+   }
+
+
 
 
 
