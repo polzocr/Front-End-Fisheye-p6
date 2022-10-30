@@ -10,6 +10,7 @@ class Accueil {
 
     createTemplate(){
         const article = document.createElement( 'article' );
+        
 
         const link = document.createElement('a')
         // let url = new URL("photographer.html")

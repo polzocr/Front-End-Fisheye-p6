@@ -131,4 +131,37 @@ h2 {
   margin: 7% 0 0 0;
 }
 
+.section-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+}
+.section-media a > img {
+  width: 350px;
+  height: 300px;
+  border-radius: 7px;
+}
+.section-media a > video {
+  width: 350px;
+  height: 300px;
+  border-radius: 7px;
+}
+.section-media footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-media footer p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+}
+
+.media-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 /*# sourceMappingURL=style2.css.map */

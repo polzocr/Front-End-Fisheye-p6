@@ -17,9 +17,15 @@ class PhotographerPage extends App{
     } 
     
     async displayDataMedia(){
+        const sectionMedia = document.createElement('section')
+        sectionMedia.setAttribute('class', 'section-media')
+        document.querySelector('#main').appendChild(sectionMedia)
         const mediaId = this.photographers.filter(photo => photo.photographerId == this.id)
         mediaId.forEach(media => {
+            console.log(media)
             const mediaModel = new MediaFactory(media)
+            const template = mediaModel.createTemplateMedia();
+            sectionMedia.appendChild(template)
         })
     }
 
