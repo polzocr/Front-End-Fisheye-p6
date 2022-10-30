@@ -1,17 +1,13 @@
 class Index extends App{
-    constructor(page, dataElement){
+    constructor(dataElement){
         super(dataElement)
         this.page = 'accueil'
-        this.element = document.querySelector(".photographer_section")
     }
 
     async displayDataAccueil(){
-        const photographersSection = this.element;
         this.photographers.forEach((photographer) => {
-        
         const photographerModel = new PhotographerFactory(photographer, this.page);
-        const userCardDOM = photographerModel.createTemplate();
-        photographersSection.appendChild(userCardDOM);
+        photographerModel.createTemplate();
         })
     } 
 
@@ -20,9 +16,9 @@ class Index extends App{
     this.displayDataAccueil()
    }
 
-    }
+}
 
-const index = new Index('accueil', 'photographers')
+const index = new Index('photographers')
 index.main()
 
 

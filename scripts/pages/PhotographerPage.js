@@ -1,13 +1,29 @@
 class PhotographerPage extends App{
-    constructor(page, dataElement){
+    constructor( dataElement){
         super(dataElement)
-        this.page = page
-        this.element = document.querySelector(".photograph-header")
+        this.page = 'photographer'
+    }
+
+    async displayDataPhotograph(){
+        const id = (new URL(document.location)).searchParams.get('id')
+        let photograph = {}
+        this.photographers.forEach(photographer => {
+            if(photographer.id == id){
+                photograph = photographer
+            }
+        })
+        const photographerModel = new PhotographerFactory(photograph, this.page);
+        photographerModel.createTemplateHeader()
+    }   
+
+    async displayHeader(){
+        await this.fetchData()
+        this.displayDataPhotograph()
     }
 }
 
-// const photographerPage = new PhotographerPage('photographer', 'photographers')
-// photographerPage.main()
+const photographerHeader = new PhotographerPage('photographers')
+photographerHeader.displayHeader()
 
 
 const params = (new URL(document.location)).searchParams

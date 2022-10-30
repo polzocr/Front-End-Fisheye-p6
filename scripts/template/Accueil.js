@@ -1,6 +1,7 @@
 class Accueil {
     constructor(data){
         data && Object.assign(this, data)
+        this.section = document.querySelector(".photographer_section")
     }
 
     get picture(){
@@ -40,6 +41,6 @@ class Accueil {
         pPrice.textContent = this.price + '€/jour';
         article.appendChild(pPrice);
         
-        return article;
+       this.section.appendChild(article);
     }
 }
