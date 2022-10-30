@@ -2,7 +2,6 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/style2.css" rel="stylesheet" type="text/css" />
 
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -17,22 +16,42 @@
       <section class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </section>
+      <section id="contact_modal">
+        <div class="modal">
+          <header class="modal-header">
+            <div class="modal-header-title">
+              <h2>Contactez-moi</h2>
+              <img src="assets/icons/close.svg" onclick="closeModal()" />
+            </div>
+            <h3>Mimi Machin</h3>
+          </header>
+          <form method="#" action="#" class="modal-form">
+            <div class="modal-form-items">
+              <label for="firstName">Prénom</label>
+              <input type="text" id="firstName" name="firstName"/>
+              <p class="firstName-error">Veuillez entrer un prénom valide</p>
+            </div>
+            <div class="modal-form-items">
+              <label for="lastName">Nom</label>
+              <input type="text" id="lastName" name="lastName"/>
+              <p class="lastName-error">Veuillez entrer un nom valide</p>
+            </div>
+            <div class="modal-form-items">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email"/>
+              <p class="email-error">Veuillez entrer un email valide</p>
+            </div>
+            <div class="modal-form-items">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message"></textarea>
+              <p class="message-error">Veuillez entrer un message valide</p>
+            </div>
+            <button type="submit" class="contact_button">Envoyer</button>
+          </form>
+        </div>
+		  </section>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+    
 
 
     <script src="scripts/factories/PhotographerFactory.js"></script>

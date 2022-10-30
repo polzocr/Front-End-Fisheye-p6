@@ -1,10 +1,266 @@
-@import url("photographer.css");
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+h1 {
+  color: #911C1C;
+  margin-right: 100px;
+  font-weight: 400;
+}
 
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+  color: #D3573C;
+}
 
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding-top: 25px;
+}
 
+.logo {
+  height: 50px;
+  margin-left: 100px;
+}
 
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+}
 
+article {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+article a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+article img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+article h2 {
+  margin: 7% 0 0 0;
+}
+article > p {
+  margin: 0.5% 0;
+}
+article :nth-child(3) {
+  color: #901C1C;
+  font-size: 13px;
+  font-weight: 400;
+}
+article :nth-child(4) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+}
+article :nth-child(5) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 12px;
+}
 
+.photograph-header {
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10% 3%;
+}
+.photograph-header-infos h1 {
+  font-size: 64px;
+  color: #D3573C;
+  font-weight: 400;
+  margin: 0;
+}
+.photograph-header-infos :nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+}
+.photograph-header-infos :nth-child(3) {
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  color: #525252;
+}
+.photograph-header img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
 
+h2 {
+  margin: 7% 0 0 0;
+}
+
+.section-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+}
+.section-media a > img {
+  width: 350px;
+  height: 300px;
+  border-radius: 7px;
+}
+.section-media a > video {
+  width: 350px;
+  height: 300px;
+  border-radius: 7px;
+}
+.section-media footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-media footer p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+}
+
+.media-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contact_modal {
+  box-sizing: border-box;
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  height: 100%;
+}
+
+.modal {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #DB8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  padding-top: 0;
+  margin: auto;
+}
+.modal-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+  height: auto;
+  align-items: flex-start;
+}
+.modal-header-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-header-title img {
+  cursor: pointer;
+}
+.modal-header-title h2 {
+  font-size: 64px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+  color: black;
+}
+.modal-header h3 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+}
+.modal-form {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.modal-form-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: self-start;
+}
+.modal-form-items label {
+  color: #312E2E;
+  font-size: 36px;
+}
+.modal-form-items input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  font-size: 25px;
+}
+.modal-form-items p {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  display: none;
+}
+.modal-form-items textarea {
+  min-height: 170px;
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 25px;
+  padding: 2%;
+  border: none;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
