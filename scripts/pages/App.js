@@ -30,8 +30,12 @@
                 }
             })
             const photographerModel = new PhotographerFactory(photograph, page);
-            const userCardDOM = photographerModel.createTemplate();
-            photographersSection.appendChild(userCardDOM);
+            const divUserCardDOM = photographerModel.createTemplate().bigDiv.querySelector('div');
+            const imgUserCardDOM = photographerModel.createTemplate().bigDiv.querySelector('img');
+            const priceUserCardDOM = photographerModel.createTemplate().aside;
+            photographersSection.insertBefore(divUserCardDOM, photographersSection.firstChild);
+            photographersSection.appendChild(imgUserCardDOM);
+            document.querySelector('main').appendChild(priceUserCardDOM)
         }
         
     }
