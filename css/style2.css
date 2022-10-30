@@ -16,6 +16,19 @@ h2 {
   color: #D3573C;
 }
 
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -78,6 +91,12 @@ article :nth-child(5) {
   font-weight: 400;
   font-size: 9px;
   line-height: 12px;
+}
+
+.photograph-header {
+  background-color: #FAFAFA;
+  height: 300px;
+  margin: 0 100px;
 }
 
 /*# sourceMappingURL=style2.css.map */
