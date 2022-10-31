@@ -3,6 +3,7 @@ class PhotographerPage extends App{
         super(dataElement)
         this.page = 'photographer'
         this.id = (new URL(document.location)).searchParams.get('id')
+        this.cache = []
     }
 
     async displayDataPhotograph(){
@@ -16,19 +17,49 @@ class PhotographerPage extends App{
         photographerModel.createTemplateHeader()
     } 
     
-    async displayDataMedia(){
+    async displayDataMedia(sort){
         const sectionMedia = document.createElement('section')
         sectionMedia.setAttribute('class', 'section-media')
         document.querySelector('#main').appendChild(sectionMedia)
         const mediaId = this.photographers.filter(photo => photo.photographerId == this.id)
+        
+        
+        this.whichSort(mediaId, 'date')
+        
         mediaId.forEach(media => {
             const mediaModel = new MediaFactory(media)
-            console.log(mediaModel)
             const template = mediaModel.createTemplateMedia();
+            this.cache.push(template)
             sectionMedia.appendChild(template)
         })
         this.likesIncrementation()
 
+    }
+
+    whichSort(datas, sortType){
+        if(sortType == 'date'){
+            console.log('date')
+            this.sortDate(datas)
+            return datas
+        } else if(sortType == 'title'){
+            console.log('title')
+            this.sortTitle(datas)
+        } else {
+            console.log('famous')
+            this.sortFamous(datas)
+        }
+    }
+
+    sortFamous(datas){
+        datas.sort((a, b) => b.likes - a.likes )
+    }
+
+    sortTitle(datas){
+        datas.sort((a, b) => a.title.localeCompare(b.title))
+    }
+    
+    sortDate(datas){
+        datas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
     }
 
     likesIncrementation(){
