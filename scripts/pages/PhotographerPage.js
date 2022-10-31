@@ -46,6 +46,3 @@ photographerHeader.displayHeader()
 const medias = new PhotographerPage('media')
 medias.displayMedia()
 
-// const params = (new URL(document.location)).searchParams
-// const id = params.get('id')
-// console.log(id)

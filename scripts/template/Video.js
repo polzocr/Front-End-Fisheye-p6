@@ -2,6 +2,7 @@ class Video {
     constructor(data){
         data && Object.assign(this, data)
         this.main = document.querySelector('main')
+        this.newLike = data.likes
     }
 
     get picture(){
@@ -44,6 +45,10 @@ class Video {
 
         const icone = document.createElement('i')
         icone.setAttribute('class', 'far fa-heart')
+        const that = this;
+        icone.addEventListener('click', function(){
+            that.testLikes(this.previousElementSibling)
+        })
         divFooter.appendChild(icone)
 
         
@@ -55,5 +60,15 @@ class Video {
         return article
 
 
+    }
+
+    testLikes(element){
+        if(this.newLike == this.likes){
+            this.newLike += 1;
+            element.textContent = this.newLike
+        } else {
+            this.newLike -= 1
+            element.textContent = this.newLike
+        }
     }
 }

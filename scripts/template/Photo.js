@@ -1,6 +1,7 @@
 class Photo {
     constructor(data){
         data && Object.assign(this, data)
+        this.newLike = data.likes
     }
 
     get picture(){
@@ -10,7 +11,7 @@ class Photo {
     createTemplateMedia(){
         const article = document.createElement('article');
         article.classList.add('media');
-
+        
         const link = document.createElement('a')
         link.setAttribute('href', '#')
 
@@ -32,15 +33,21 @@ class Photo {
         const divFooter = document.createElement('div')
         divFooter.setAttribute('class', 'media-div')
 
+        
+
+        
+
         const pIcone = document.createElement('p')
         pIcone.textContent = this.likes
         divFooter.appendChild(pIcone)
 
         const icone = document.createElement('i')
         icone.setAttribute('class', 'far fa-heart')
+        const that = this;
+        icone.addEventListener('click', function(){
+            that.testLikes(this.previousElementSibling)
+        })
         divFooter.appendChild(icone)
-
-        
 
         footer.appendChild(divFooter)
 
@@ -48,4 +55,19 @@ class Photo {
 
         return article
     }
+
+    testLikes(element){
+        if(this.newLike == this.likes){
+            this.newLike += 1;
+            element.textContent = this.newLike
+        } else {
+            this.newLike -= 1
+            element.textContent = this.newLike
+        }
+    }
+    
+    
+
+    
+
 }

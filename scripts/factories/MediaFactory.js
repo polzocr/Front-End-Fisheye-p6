@@ -8,4 +8,8 @@ class MediaFactory {
             throw 'Erreurr ici-même, thomasse'
         }
     }
+
+    teste(){
+        console.log('test test test')
+    }
 }
