@@ -47,7 +47,7 @@ class Video {
         icone.setAttribute('class', 'far fa-heart')
         const that = this;
         icone.addEventListener('click', function(){
-            that.testLikes(this.previousElementSibling)
+            that.totalLikes(this.previousElementSibling, icone)
         })
         divFooter.appendChild(icone)
 
@@ -62,13 +62,19 @@ class Video {
 
     }
 
-    testLikes(element){
+    totalLikes(element, icone){
+        const pTotalLikes = document.querySelector('.number-likes p')
         if(this.newLike == this.likes){
             this.newLike += 1;
             element.textContent = this.newLike
+            pTotalLikes.textContent = parseInt(pTotalLikes.textContent) + 1
+            icone.classList.add('liked')
         } else {
             this.newLike -= 1
             element.textContent = this.newLike
+            pTotalLikes.textContent = parseInt(pTotalLikes.textContent) - 1
+            icone.classList.remove('liked')
         }
     }
+    
 }

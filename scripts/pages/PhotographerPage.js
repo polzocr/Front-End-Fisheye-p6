@@ -22,17 +22,21 @@ class PhotographerPage extends App{
         document.querySelector('#main').appendChild(sectionMedia)
         const mediaId = this.photographers.filter(photo => photo.photographerId == this.id)
         mediaId.forEach(media => {
-            console.log(media)
             const mediaModel = new MediaFactory(media)
+            console.log(mediaModel)
             const template = mediaModel.createTemplateMedia();
             sectionMedia.appendChild(template)
         })
+        this.likesIncrementation()
+
+    }
+
+    likesIncrementation(){
         const allLikes = document.querySelectorAll('.media-div p');
         const pLikes = document.querySelector('.number-likes p')
         let likes = 0;
         allLikes.forEach(like => likes += parseInt(like.textContent))
-        pLikes.textContent = likes
-
+        pLikes.textContent = likes  
     }
 
     async displayHeader(){

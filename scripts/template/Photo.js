@@ -45,7 +45,7 @@ class Photo {
         icone.setAttribute('class', 'far fa-heart')
         const that = this;
         icone.addEventListener('click', function(){
-            that.testLikes(this.previousElementSibling, icone)
+            that.totalLikes(this.previousElementSibling, icone)
         })
         divFooter.appendChild(icone)
 
@@ -56,7 +56,7 @@ class Photo {
         return article
     }
 
-    testLikes(element, icone){
+    totalLikes(element, icone){
         const pTotalLikes = document.querySelector('.number-likes p')
         if(this.newLike == this.likes){
             this.newLike += 1;
