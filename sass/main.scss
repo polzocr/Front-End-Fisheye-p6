@@ -2,7 +2,13 @@
 
 @import 'base/base';
 
+@import 'composants/buttons';
+
 @import 'layout/header';
 
 
 @import 'pages/accueil/accueil';
+@import 'pages/photograph/header';
+@import 'pages/photograph/aside';
+@import 'pages/photograph/media';
+@import 'pages/photograph/contact';

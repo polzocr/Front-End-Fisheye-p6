@@ -1,0 +1,49 @@
+.section-media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+
+    a >img{
+        width: 350px;
+        height: 300px;
+        border-radius: 7px;
+    }
+    a > video{
+        width: 350px;
+        height: 300px;
+        border-radius: 7px;
+    }
+    footer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 6px;
+        box-sizing: border-box;
+        p{
+            font-size: 24px;
+            font-weight: 400;
+            color: $primary-color;
+        }
+    }
+}
+
+.media-div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i{
+        font-size: 19px;
+        &:hover{
+            cursor: pointer;
+        }
+
+    }
+}
+
+.far.fa-heart.liked{
+    color: red;
+    font-weight: 700;
+}

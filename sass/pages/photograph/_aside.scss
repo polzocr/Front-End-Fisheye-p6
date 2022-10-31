@@ -1,0 +1,31 @@
+aside {
+    box-sizing: border-box;
+    width: 330px;
+    height: 60px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    background-color: $aside-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2% 2.5%;
+    z-index: 1;
+    p{
+        font-weight: 600;
+        font-size: 24px;
+        color: black;
+    }
+    .number-likes{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i{
+            font-size: 19px;
+            color: black;
+            font-weight: 700;
+        }
+    }
+}
+
