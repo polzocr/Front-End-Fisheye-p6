@@ -131,6 +131,37 @@ h2 {
   margin: 7% 0 0 0;
 }
 
+aside {
+  box-sizing: border-box;
+  width: 330px;
+  height: 60px;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background-color: #DB8876;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 2.5%;
+  z-index: 1;
+}
+aside p {
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
+}
+aside .number-likes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside .number-likes i {
+  font-size: 19px;
+  color: black;
+  font-weight: 700;
+}
+
 .section-media {
   display: flex;
   flex-wrap: wrap;
@@ -151,6 +182,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 0 6px;
+  box-sizing: border-box;
 }
 .section-media footer p {
   font-size: 24px;
@@ -162,6 +195,17 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.media-div i {
+  font-size: 19px;
+}
+.media-div i:hover {
+  cursor: pointer;
+}
+
+.far.fa-heart.liked {
+  color: red;
+  font-weight: 700;
 }
 
 #contact_modal {

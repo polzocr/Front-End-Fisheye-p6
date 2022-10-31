@@ -36,7 +36,7 @@ class Photographer {
         img.setAttribute("alt", this.name)
 
         const pPrice = document.createElement('p')
-        pPrice.textContent = this.price + '€/jour';
+        pPrice.textContent = this.price + '€ / jour';
 
         const divLikes = document.createElement('div')
         const pIcone = document.createElement('p')
