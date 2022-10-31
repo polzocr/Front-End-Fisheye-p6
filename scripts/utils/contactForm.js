@@ -7,8 +7,10 @@ function displayModal() {
 }
 
 function closeModal() {
+    const body = document.querySelector('body')
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    body.style.overflow = 'initial';
 }
 
 const firstName = document.getElementById('firstName');
@@ -67,11 +69,17 @@ function removeError(element){
     })
 }
 
+function removeValueModal(){
+    const inputs = document.querySelectorAll('input')
+    const textarea = document.getElementById('message')
+    inputs.forEach(input => input.value = '')
+    textarea.value = ''
+}
+
 removeError(firstName)
 removeError(lastName)
 removeError(email)
 removeError(message)
-
 
 
 function sendData(){
@@ -89,11 +97,13 @@ function sendData(){
         validation = false;
     }
     if(validation){
-        console.log('Message envoyé avec succès')
-        console.log("Prénom: " + firstName.value)
-        console.log("Nom: " + lastName.value)
-        console.log("Email: " + email.value)
-        console.log("Message: " + message.value)
+        console.log('Message envoyé avec succès');
+        console.log("Prénom: " + firstName.value);
+        console.log("Nom: " + lastName.value);
+        console.log("Email: " + email.value);
+        console.log("Message: " + message.value);
+        removeValueModal();
+        closeModal();
         return false
     } else {
         return false
