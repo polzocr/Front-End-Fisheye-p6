@@ -11,7 +11,7 @@ class Photo {
     createTemplateMedia(){
         const article = document.createElement('article');
         article.classList.add('media');
-        
+
         const link = document.createElement('a')
         link.setAttribute('href', '#')
 
@@ -57,12 +57,15 @@ class Photo {
     }
 
     testLikes(element){
+        const pTotalLikes = document.querySelector('.number-likes p')
         if(this.newLike == this.likes){
             this.newLike += 1;
             element.textContent = this.newLike
+            pTotalLikes.textContent = parseInt(pTotalLikes.textContent) + 1
         } else {
             this.newLike -= 1
             element.textContent = this.newLike
+            pTotalLikes.textContent = parseInt(pTotalLikes.textContent) - 1
         }
     }
     

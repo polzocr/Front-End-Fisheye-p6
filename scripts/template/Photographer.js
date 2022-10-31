@@ -37,11 +37,26 @@ class Photographer {
 
         const pPrice = document.createElement('p')
         pPrice.textContent = this.price + '€/jour';
+
+        const divLikes = document.createElement('div')
+        const pIcone = document.createElement('p')
+        const icone = document.createElement('i')
+        divLikes.setAttribute('class', 'number-likes')
+        pIcone.textContent = ''
+        icone.setAttribute('class', 'far fa-heart')
+
+        divLikes.appendChild(pIcone)
+        divLikes.appendChild(icone)
+        aside.appendChild(divLikes)
         aside.appendChild(pPrice);
 
         bigDiv.appendChild(firstDiv);
         this.section.insertBefore(bigDiv, this.section.firstChild);
         this.section.appendChild(img);
         this.main.appendChild(aside) 
+    }
+
+    totalLikes(){
+        console.log('yeah')
     }
 }

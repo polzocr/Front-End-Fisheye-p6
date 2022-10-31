@@ -9,7 +9,5 @@ class MediaFactory {
         }
     }
 
-    teste(){
-        console.log('test test test')
-    }
+    
 }

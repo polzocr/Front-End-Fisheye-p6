@@ -27,6 +27,12 @@ class PhotographerPage extends App{
             const template = mediaModel.createTemplateMedia();
             sectionMedia.appendChild(template)
         })
+        const allLikes = document.querySelectorAll('.media-div p');
+        const pLikes = document.querySelector('.number-likes p')
+        let likes = 0;
+        allLikes.forEach(like => likes += parseInt(like.textContent))
+        pLikes.textContent = likes
+
     }
 
     async displayHeader(){
