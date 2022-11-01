@@ -3,7 +3,6 @@ class PhotographerPage extends App{
         super(dataElement)
         this.page = 'photographer'
         this.id = (new URL(document.location)).searchParams.get('id')
-        this.cache = []
     }
 
     async displayDataPhotograph(){
@@ -18,18 +17,21 @@ class PhotographerPage extends App{
     } 
     
     async displayDataMedia(sort){
+        const sectionExists = document.querySelector('.section-media')
+        if(sectionExists){
+            sectionExists.remove()
+        }
         const sectionMedia = document.createElement('section')
         sectionMedia.setAttribute('class', 'section-media')
         document.querySelector('#main').appendChild(sectionMedia)
         const mediaId = this.photographers.filter(photo => photo.photographerId == this.id)
         
         
-        this.whichSort(mediaId, 'date')
-        
+        this.whichSort(mediaId, sort)
+
         mediaId.forEach(media => {
             const mediaModel = new MediaFactory(media)
             const template = mediaModel.createTemplateMedia();
-            this.cache.push(template)
             sectionMedia.appendChild(template)
         })
         this.likesIncrementation()
@@ -75,9 +77,9 @@ class PhotographerPage extends App{
         this.displayDataPhotograph()
     }
 
-    async displayMedia(){
+    async displayMedia(sort){
         await this.fetchData()
-        this.displayDataMedia()
+        this.displayDataMedia(sort)
     }
 }
 
@@ -85,5 +87,5 @@ const photographerHeader = new PhotographerPage('photographers')
 photographerHeader.displayHeader()
 
 const medias = new PhotographerPage('media')
-medias.displayMedia()
+medias.displayMedia('date')
 
