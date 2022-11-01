@@ -1,6 +1,9 @@
+const arrowSection = document.querySelector('#sort')
+console.log(arrow)
 function displayModal() {
     const body = document.querySelector('body')
     const modal = document.getElementById("contact_modal");
+    arrowSection.style.display = 'none'
 	modal.style.display = "block";
     body.style.overflow = 'hidden';
 
@@ -10,6 +13,7 @@ function closeModal() {
     const body = document.querySelector('body')
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    arrowSection.style.display = 'initial'
     body.style.overflow = 'initial';
 }
 
