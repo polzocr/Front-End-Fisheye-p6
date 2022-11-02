@@ -64,35 +64,18 @@
         </div>
       </section>
       
+      <section class="lightbox">
+        <div class="content">
+          <button class="content-button previous"></button>
+          <img src="" alt="" class="content-picture">
+          <button class="content-button next"></button>
+          <button class="content-button close"> + </button>
+          <p class="content-title"></p>
+        </div>
+      </section>
+      
     </main>
-    
-<script>
 
-// const firstElement = document.querySelector('#first-element');
-// const items = document.querySelector('.sort-list-items');
-
-
-  
-
-
-// function toggleNavbar() {
-//     if (!items.getAttribute('style') || items.getAttribute('style') === 'display: none;') {
-//         items.style.display = 'block';
-//         firstElement.setAttribute('aria-expanded', 'true');
-//     } else {
-//         items.style.display = 'none';
-//         firstElement.setAttribute('aria-expanded', 'false');
-//     }
-// }
-
-// firstElement.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     firstElement.classList.toggle("active")
-//     toggleNavbar();
-// })
-
-  
-</script>
 
     <script src="scripts/factories/PhotographerFactory.js"></script>
     <script src="scripts/factories/ApiFactory.js"></script>
@@ -101,8 +84,10 @@
     <script src="scripts/template/Photographer.js"></script>
     <script src="scripts/template/Video.js"></script>
     <script src="scripts/template/Photo.js"></script>
+
     <script src="scripts/utils/contactForm.js"></script>
     <script src="scripts/utils/sort.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
     
     <script src="scripts/api/ApiPhotographers.js"></script>
     <script src="scripts/api/ApiMedia.js"></script>

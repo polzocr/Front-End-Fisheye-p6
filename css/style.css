@@ -419,4 +419,74 @@ aside .number-likes i {
   font-weight: 700;
 }
 
+.lightbox {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.lightbox.show {
+  display: flex;
+  overflow: hidden;
+}
+
+.content {
+  width: 70%;
+  height: 1040px;
+  position: relative;
+}
+.content-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #901C1C;
+}
+.content-button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: none;
+  border-left: 8px solid #901C1C;
+  border-top: 8px solid #901C1C;
+}
+.content-button:hover {
+  cursor: pointer;
+}
+.content-button.previous {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 495px;
+  left: -60px;
+}
+.content-button.next {
+  transform: rotate(135deg);
+  position: absolute;
+  top: 495px;
+  right: -60px;
+}
+.content-button.close {
+  border: none;
+  color: #901C1C;
+  font-size: 110px;
+  position: absolute;
+  top: 6px;
+  right: -80px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+
 /*# sourceMappingURL=style.css.map */

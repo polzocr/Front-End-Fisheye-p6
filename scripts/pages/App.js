@@ -10,7 +10,9 @@
         const dataApi = await this.api.get()
         this.photographers = dataApi
     }
-
+    test1(){
+        console.log('lol')
+    }
     
          
 }

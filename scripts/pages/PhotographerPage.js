@@ -25,30 +25,36 @@ class PhotographerPage extends App{
         sectionMedia.setAttribute('class', 'section-media')
         document.querySelector('#main').appendChild(sectionMedia)
         const mediaId = this.photographers.filter(photo => photo.photographerId == this.id)
-        
-        
         this.whichSort(mediaId, sort)
+        let lightbox = new Lightbox(mediaId)
 
         mediaId.forEach(media => {
             const mediaModel = new MediaFactory(media)
             const template = mediaModel.createTemplateMedia();
             sectionMedia.appendChild(template)
+            this.setLightbox(template, mediaModel.id, lightbox)
+
         })
         this.likesIncrementation()
 
     }
 
+    setLightbox(template, id, lightbox){
+        template.querySelector('a').addEventListener('click', function(e){
+            lightbox.showModal(id)
+        })
+    }
+
     whichSort(datas, sortType){
         if(sortType == 'date'){
-            console.log('date')
             this.sortDate(datas)
             return datas
         } else if(sortType == 'title'){
-            console.log('title')
             this.sortTitle(datas)
+            return datas
         } else {
-            console.log('famous')
             this.sortFamous(datas)
+            return datas
         }
     }
 

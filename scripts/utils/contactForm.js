@@ -1,5 +1,4 @@
 const arrowSection = document.querySelector('#sort')
-console.log(arrow)
 function displayModal() {
     const body = document.querySelector('body')
     const modal = document.getElementById("contact_modal");
