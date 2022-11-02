@@ -303,7 +303,7 @@ aside .number-likes i {
   position: absolute;
   top: 24px;
   right: 22px;
-  z-index: 1000;
+  z-index: 1;
   width: 8px;
   height: 8px;
   border: 2px solid #901C1C;

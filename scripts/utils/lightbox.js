@@ -27,6 +27,7 @@ class Lightbox{
         }
         document.querySelector('.content-title').textContent = this.currentElement.title;
         body.style.overflow = 'hidden';
+        document.addEventListener('keyup', this.eventKey)
     }
 
     next(){
@@ -53,6 +54,23 @@ class Lightbox{
         const body = document.querySelector('body')
         document.querySelector('.lightbox').classList.remove("show")
         body.style.overflow = 'initial';
+        document.removeEventListener('keyup', this.eventKey)
+    }
+
+    eventKey = (e) => {
+        switch(e.key){
+            case 'ArrowRight': 
+                this.next();
+                break;
+            case 'ArrowLeft':
+                this.previous()
+                break;
+            case 'Escape':
+                this.close()
+                break;
+            default:
+                break;
+        }
     }
 
     manageEvents(){
