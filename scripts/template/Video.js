@@ -16,10 +16,10 @@ class Video {
 
         const link = document.createElement('a')
         link.setAttribute('href', '#')
+        link.setAttribute('class', 'media-video')
 
         const video = document.createElement( 'video');
         video.autoplay = false;
-        video.controls = true;
         video.muted = false;
         video.setAttribute("src", this.picture)
         video.setAttribute("alt", this.title)

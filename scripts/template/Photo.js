@@ -14,7 +14,6 @@ class Photo {
 
         const link = document.createElement('a')
         link.setAttribute('href', '#')
-        link.dataset.id = this.id;
 
         const img = document.createElement( 'img');
         img.setAttribute("src", this.picture)

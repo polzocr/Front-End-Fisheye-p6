@@ -13,9 +13,18 @@ class Lightbox{
 
     display(){
         const body = document.querySelector('body')
+        const image = document.querySelector('.content-picture')
+        const video = document.querySelector('.content-video')
         document.querySelector('.lightbox').classList.add("show")
-        document.querySelector('.content-picture').src = 
-            `assets/images/${this.currentElement.photographerId}/${this.currentElement.image}`;
+        if(this.currentElement.image !== undefined){
+            image.src =`assets/images/${this.currentElement.photographerId}/${this.currentElement.image}`;
+            image.style.display = 'initial'
+            video.style.display = 'contents'
+        }else {
+            video.src =`assets/videos/${this.currentElement.photographerId}/${this.currentElement.video}`
+                image.style.display = 'none'
+                video.style.display = 'block'
+        }
         document.querySelector('.content-title').textContent = this.currentElement.title;
         body.style.overflow = 'hidden';
     }
