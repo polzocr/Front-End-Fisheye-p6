@@ -17,11 +17,11 @@
         <button class="contact_button" onclick="displayModal()" role="button">Contactez-moi</button>
       </section>
 
-      <section class="contact_modal" role="dialog" aria-label="formulaire de contact">
+      <section class="contact_modal" role="dialog" aria-label="formulaire de contact"  aria-hidden="true" aria-describedby="modalTitle">
         <div class="modal">
           <header class="modal-header" role="banner" aria-label="En tete du formulaire de contact">
             <div class="modal-header-title">
-              <h1>Contactez-moi</h1>
+              <h1 id="modalTitle">Contactez-moi</h1>
               <button role="button" aria-label="fermer le formulaire" onclick="closeModal()"><img src="assets/icons/close.svg" alt=''/></button>
             </div>
             <h2>Mimi Machin</h2>
@@ -51,15 +51,16 @@
           </form>
         </div>
 		  </section>
-      <section id="sort">
+
+      <section id="sort" role="navigation" aria-describedby="navigationTitle">
         <div class="sort">
-          <p>Trier par</p>
+          <p id="navigationTitle">Trier par</p>
           <div class="dropdown">
-              <input id="text" class="dropdown-text contact_button" type="text" value="Date" readonly>
+              <button id="text" class="contact_button dropdown-button text"><span>Date</span></button>
               <div class="dropdown-options">
-                <div id="date" class="contact_button dropdown-button"><span>Date</span></div>
-                <div id="famous" class="contact_button dropdown-button"><span>Popularité</span></div>
-                <div id="title" class="contact_button dropdown-button"><span>Titre</span></div>
+                <button id="date" class="contact_button dropdown-button undisplayed" tabindex="0" role="button"><span>Date</span></button>
+                <button id="famous" class="contact_button dropdown-button" tabindex="0" role="button"><span>Popularité</span></button>
+                <button id="title" class="contact_button dropdown-button" tabindex="0" role="button"><span>Titre</span></button>
               </div>
           </div>
         </div>

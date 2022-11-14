@@ -8,7 +8,6 @@ dropdown.onclick = function() {
 const date = document.getElementById('date')
 const famous = document.getElementById('famous')
 const title = document.getElementById('title')
-date.style.display = 'none'
 
 date.addEventListener('click', function(){
     changeText('Date')
@@ -29,37 +28,35 @@ title.addEventListener('click', function(){
     titleMedia.displayMedia('title')
 })
   
-    function changeText(value){
-    let text = document.getElementById('text')
-    text.value = value;
-    
-    if(text.value == 'Date'){
-      date.style.display = 'none'
-      famous.style.display  = 'block'
-      title.style.display  = 'block'
-    } else if(text.value == 'Popularité'){
-      famous.style.display = 'none'
-      date.style.display  = 'block'
-      title.style.display  = 'block'
-    } else if(text.value == 'Titre'){
-      title.style.display  = 'none'
-      date.style.display  = 'block'
-      famous.style.display = 'block'
-    }
+function changeText(value){
+  let text = document.querySelector('#text span')
+  text.textContent = value;
+  
+  if(text.textContent == 'Date'){
+    date.classList.add('undisplayed')
+    famous.classList.remove('undisplayed')
+    title.classList.remove('undisplayed')
+  } else if(text.textContent == 'Popularité'){
+    famous.classList.add('undisplayed')
+    date.classList.remove('undisplayed')
+    title.classList.remove('undisplayed')
+  } else if(text.textContent == 'Titre'){
+    title.classList.add('undisplayed')
+    date.classList.remove('undisplayed')
+    famous.classList.remove('undisplayed')
   }
+}
 
 function addBorder(){
-    let value = document.getElementById('text').value
+    let value = document.querySelector('#text span').textContent
     const dateSpan = document.querySelector('#date span')
     const famousSpan = document.querySelector('#famous span')
     if(value == 'Popularité' || value == 'Titre'){
-        dateSpan.style.borderBottom = '2px solid white'
-        dateSpan.style.borderTop = '2px solid white'
-        famousSpan.style.border = 'none'
+        dateSpan.classList.add('bordered')
+        famousSpan.classList.remove('bordered')
     } else {
-        famousSpan.style.borderBottom = '2px solid white'
-        famousSpan.style.borderTop = '2px solid white' 
-        dateSpan.style.border = 'none'
+        famousSpan.classList.add('bordered')
+        dateSpan.classList.remove('bordered')
     }
 }
   

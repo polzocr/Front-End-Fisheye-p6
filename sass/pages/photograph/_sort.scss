@@ -1,5 +1,3 @@
-#sort{
-}
 
 
 .sort{
@@ -26,8 +24,6 @@
         }
     }
     &.active{
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
         &::before{
             top: 24px;
             transform: rotate(-225deg); 
@@ -111,6 +107,28 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+.contact_button.dropdown-button.text{
+    border-radius: 5px;
+}
+
+.dropdown.active{
+    .contact_button.dropdown-button.text{
+        
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+}
+
+.bordered{
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.undisplayed {
+    display: none;
+}
+
 
 
 
