@@ -24,7 +24,7 @@
               <h1 id="modalTitle">Contactez-moi</h1>
               <button role="button" aria-label="fermer le formulaire" onclick="closeModal()"><img src="assets/icons/close.svg" alt=''/></button>
             </div>
-            <h2>Mimi Machin</h2>
+            <h2></h2>
           </header>
           <form action="photographer.html" class="modal-form" onsubmit="return sendData();">
             <div class="modal-form-items">
@@ -56,11 +56,11 @@
         <div class="sort">
           <p id="navigationTitle">Trier par</p>
           <div class="dropdown">
-              <button id="text" class="contact_button dropdown-button text"><span>Date</span></button>
-              <div class="dropdown-options">
-                <button id="date" class="contact_button dropdown-button undisplayed" tabindex="0" role="button"><span>Date</span></button>
-                <button id="famous" class="contact_button dropdown-button" tabindex="0" role="button"><span>Popularité</span></button>
-                <button id="title" class="contact_button dropdown-button" tabindex="0" role="button"><span>Titre</span></button>
+              <button id="text" class="contact_button dropdown-button text" role="button" aria-label="choix du tri" aria-haspopup="listbox" aria-expanded="false"><span>Date</span></button>
+              <div class="dropdown-options" role="listbox"  aria-selected="false">
+                <button id="date" class="contact_button dropdown-button undisplayed" tabindex="0" role="button" aria-label="trier par date" ><span>Date</span></button>
+                <button id="famous" class="contact_button dropdown-button" tabindex="0" role="button" aria-label="trier par popularité"><span>Popularité</span></button>
+                <button id="title" class="contact_button dropdown-button" tabindex="0" role="button" aria-label="trier par titre"><span>Titre</span></button>
               </div>
           </div>
         </div>

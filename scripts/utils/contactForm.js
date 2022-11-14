@@ -6,7 +6,7 @@ const focusElements = modal.querySelectorAll(...elements)
 
 function displayModal() {
     arrowSection.style.display = 'none'
-	modal.classList.add('open');
+	  modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false')
     body.classList.add('hidden');
     body.setAttribute('aria-hidden', 'true')

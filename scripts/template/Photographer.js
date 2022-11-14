@@ -53,7 +53,10 @@ class Photographer {
         bigDiv.appendChild(firstDiv);
         this.section.insertBefore(bigDiv, this.section.firstChild);
         this.section.appendChild(img);
-        this.main.appendChild(aside) 
+        this.main.appendChild(aside);
+
+        const modalh2 = document.querySelector('.contact_modal h2')
+        modalh2.textContent = this.name
     }
 
     totalLikes(){

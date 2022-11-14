@@ -1,29 +1,44 @@
-let dropdown = document.querySelector(".dropdown")
-dropdown.onclick = function() {
-    addBorder()
-    dropdown.classList.toggle("active")
-
-}
-
+const dropdown = document.querySelector(".dropdown")
 const date = document.getElementById('date')
 const famous = document.getElementById('famous')
 const title = document.getElementById('title')
+const popup = document.getElementById('text')
+const listbox = document.querySelector('.dropdown-options')
+
+
+popup.onclick = function() {
+    addBorder()
+    dropdown.classList.toggle("active")
+    popup.ariaExpanded = true
+    listbox.ariaSelected = true
+}
+
+
 
 date.addEventListener('click', function(){
     changeText('Date')
     addBorder()
+    popup.ariaExpanded = false
+    listbox.ariaSelected = false
+    dropdown.classList.remove('active')
     const dateMedia = new PhotographerPage('media')
     dateMedia.displayMedia('date')
 })
 famous.addEventListener('click', function(){
     changeText('Popularité')
     addBorder()
+    popup.ariaExpanded = false
+    listbox.ariaSelected = false
+    dropdown.classList.remove('active')
     const famousMedia = new PhotographerPage('media')
     famousMedia.displayMedia('famous')
 })
 title.addEventListener('click', function(){
     changeText('Titre')
     addBorder()
+    popup.ariaExpanded = false
+    listbox.ariaSelected = false
+    dropdown.classList.remove('active')
     const titleMedia = new PhotographerPage('media')
     titleMedia.displayMedia('title')
 })
