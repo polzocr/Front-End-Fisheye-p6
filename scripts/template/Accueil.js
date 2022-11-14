@@ -15,13 +15,16 @@ class Accueil {
         const link = document.createElement('a')
         // let url = new URL("photographer.html")
         link.setAttribute("href", "photographer.html?id=" + this.id)
+        link.setAttribute("role", "link")
+        link.setAttribute("aria-label", "lien page " + this.name)
+        
         article.appendChild(link)
 
 
         //creation et ajout image
         const img = document.createElement( 'img' );
         img.setAttribute("src", this.picture)
-        img.setAttribute("alt", this.name)
+        img.setAttribute("alt", '')
         link.appendChild(img);
 
         //creation et ajout h2
@@ -43,5 +46,7 @@ class Accueil {
         article.appendChild(pPrice);
         
        this.section.appendChild(article);
+       this.section.setAttribute('role', 'region')
+       this.section.setAttribute('aria-label', 'les photographes')
     }
 }
