@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 
@@ -9,44 +9,45 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+    <header role="banner">
+      <a href="index.html" aria-label="lien page d'accueil" role="link"><img src="assets/images/logo.png" alt="Fisheye Home page" class="logo" /></a>
     </header>
-    <main id="main">
-      <section class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    <main id="main" aria-hidden="true">
+      <section class="photograph-header" role="region" aria-label="infos-photographe">
+        <button class="contact_button" onclick="displayModal()" role="button">Contactez-moi</button>
       </section>
-      <section id="contact_modal">
+
+      <section class="contact_modal" role="dialog" aria-label="formulaire de contact">
         <div class="modal">
-          <header class="modal-header">
+          <header class="modal-header" role="banner" aria-label="En tete du formulaire de contact">
             <div class="modal-header-title">
-              <h2>Contactez-moi</h2>
-              <img src="assets/icons/close.svg" onclick="closeModal()" />
+              <h1>Contactez-moi</h1>
+              <button role="button" aria-label="fermer le formulaire" onclick="closeModal()"><img src="assets/icons/close.svg" alt=''/></button>
             </div>
-            <h3>Mimi Machin</h3>
+            <h2>Mimi Machin</h2>
           </header>
-          <form method="#" action="photographer.html" class="modal-form" onsubmit="return sendData();">
+          <form action="photographer.html" class="modal-form" onsubmit="return sendData();">
             <div class="modal-form-items">
               <label for="firstName">Prénom</label>
-              <input type="text" id="firstName" name="firstName"/>
+              <input type="text" id="firstName" name="firstName" aria-required='true'/>
               <p class="firstName-error">Veuillez entrer un prénom valide</p>
             </div>
             <div class="modal-form-items">
               <label for="lastName">Nom</label>
-              <input type="text" id="lastName" name="lastName"/>
+              <input type="text" id="lastName" name="lastName" aria-required='true'/>
               <p class="lastName-error">Veuillez entrer un nom valide</p>
             </div>
             <div class="modal-form-items">
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email"/>
+              <input type="email" id="email" name="email" aria-required='true'/>
               <p class="email-error">Veuillez entrer un email valide</p>
             </div>
             <div class="modal-form-items">
               <label for="message">Votre message</label>
-              <textarea id="message" name="message"></textarea>
+              <textarea id="message" name="message" aria-required='true'></textarea>
               <p class="message-error">Veuillez entrer un message</p>
             </div>
-            <button type='submit' class="contact_button">Envoyer</button>
+            <button type='submit' class="contact_button" role="button">Envoyer</button>
           </form>
         </div>
 		  </section>

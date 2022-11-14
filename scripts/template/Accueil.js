@@ -46,7 +46,5 @@ class Accueil {
         article.appendChild(pPrice);
         
        this.section.appendChild(article);
-       this.section.setAttribute('role', 'region')
-       this.section.setAttribute('aria-label', 'les photographes')
     }
 }

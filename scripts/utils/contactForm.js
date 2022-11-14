@@ -1,20 +1,45 @@
 const arrowSection = document.querySelector('#sort')
-function displayModal() {
-    const body = document.querySelector('body')
-    const modal = document.getElementById("contact_modal");
-    arrowSection.style.display = 'none'
-	modal.style.display = "block";
-    body.style.overflow = 'hidden';
+const body = document.querySelector('body')
+const modal = document.querySelector(".contact_modal");
+const elements = ['button', 'input', 'textarea'];
+const focusElements = modal.querySelectorAll(...elements)
 
+function displayModal() {
+    arrowSection.style.display = 'none'
+	modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false')
+    body.classList.add('hidden');
+    body.setAttribute('aria-hidden', 'true')
 }
 
 function closeModal() {
-    const body = document.querySelector('body')
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    modal.classList.remove('open')
     arrowSection.style.display = 'initial'
-    body.style.overflow = 'initial';
+    body.classList.remove('hidden')
+    body.setAttribute('aria-hidden', 'false')
+    modal.setAttribute('aria-hidden', 'true')
 }
+
+document.addEventListener('keydown', (e) => {
+  const tab = e.key === 'Tab';
+  const escape = e.key === 'Escape';
+  if (!escape && !tab){
+    return
+  }
+  if (escape) { 
+    closeModal();
+    e.preventDefault()
+  }
+  if (e.shiftKey) { 
+    if (document.activeElement === focusElements[0]) {
+      focusElements[focusElements.length-1].focus(); 
+      e.preventDefault();
+    }
+  } else if (document.activeElement === focusElements[focusElements.length-1]) {
+    focusElements[0].focus(); 
+    e.preventDefault();
+  }
+});
 
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
@@ -62,13 +87,13 @@ function validationMessage(element){
 
 function createError(element){
    const error = document.querySelector(`.${element.name}-error`)
-   error.style.display = 'contents'
+   error.classList.add('show-error')
 }
 
 function removeError(element){
      
     element.addEventListener('focus', function(){
-        document.querySelector(`.${element.name}-error`).style.display = 'none'
+        document.querySelector(`.${element.name}-error`).classList.remove('show-error')
     })
 }
 

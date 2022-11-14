@@ -171,7 +171,11 @@ aside .number-likes i {
   font-weight: 700;
 }
 
-#contact_modal {
+.hidden {
+  overflow: hidden;
+}
+
+.contact_modal {
   box-sizing: border-box;
   display: none;
   width: 100%;
@@ -179,8 +183,11 @@ aside .number-likes i {
   top: 10%;
   left: 0;
   z-index: 100;
-  background-color: white;
   height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.contact_modal.open {
+  display: block;
 }
 
 .modal {
@@ -210,21 +217,28 @@ aside .number-likes i {
   display: flex;
   justify-content: space-between;
 }
+.modal-header-title button {
+  border: none;
+  background-color: #DB8876;
+}
 .modal-header-title img {
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
-.modal-header-title h2 {
+.modal-header-title h1 {
   font-size: 64px;
   font-weight: normal;
   text-align: center;
   margin: 0;
   color: black;
 }
-.modal-header h3 {
+.modal-header h2 {
   font-size: 64px;
   font-style: normal;
   font-weight: normal;
   margin: 0;
+  color: black;
 }
 .modal-form {
   box-sizing: border-box;
@@ -264,6 +278,9 @@ aside .number-likes i {
   color: rgb(255, 255, 255);
   font-size: 20px;
   display: none;
+}
+.modal-form-items p.show-error {
+  display: contents;
 }
 .modal-form-items textarea {
   min-height: 170px;
