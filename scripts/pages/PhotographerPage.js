@@ -43,7 +43,6 @@ class PhotographerPage extends App{
 
     setLightbox(template, id, lightbox){
         template.querySelector('a').addEventListener('click', function(e){
-            console.log('ici')
             lightbox.showModal(id)
         })
     }

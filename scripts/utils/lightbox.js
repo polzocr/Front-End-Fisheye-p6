@@ -10,6 +10,7 @@ class Lightbox{
         this.display()
         
     }
+    
 
     display(){
         const body = document.querySelector('body')
