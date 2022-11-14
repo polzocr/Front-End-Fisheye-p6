@@ -33,6 +33,10 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
 }
+.contact_button:hover {
+  color: black;
+  background-color: #DB8876;
+}
 
 header {
   display: flex;
@@ -233,6 +237,9 @@ aside .number-likes i {
 .modal-form button {
   margin-top: 4%;
 }
+.modal-form button:hover {
+  background-color: #D3573C;
+}
 .modal-form-items {
   display: flex;
   flex-direction: column;
@@ -287,6 +294,9 @@ aside .number-likes i {
   height: 60px;
   border-radius: 5px;
 }
+.dropdown:hover::before {
+  border-color: black;
+}
 .dropdown.active {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -306,7 +316,6 @@ aside .number-likes i {
   z-index: 1;
   width: 8px;
   height: 8px;
-  border: 2px solid #901C1C;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   transform: rotate(-45deg);
@@ -342,8 +351,8 @@ aside .number-likes i {
   cursor: pointer;
 }
 .dropdown-options div:hover {
-  background: #62baea;
-  color: #fff;
+  background: #DB8876;
+  color: black;
 }
 
 .dropdown-button {

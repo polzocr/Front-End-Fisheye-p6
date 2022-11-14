@@ -20,6 +20,11 @@
     width: 170px;
     height: 60px;
     border-radius: 5px;
+    &:hover{
+        &::before{
+            border-color: black;
+        }
+    }
     &.active{
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
@@ -39,7 +44,7 @@
         z-index: 1;
         width: 8px;
         height: 8px;
-        border: 2px solid $primary-color;
+        //border: 2px solid $primary-color;
         border-top: 3px solid #fff;
         border-right: 3px solid #fff;
         transform: rotate(-45deg);
@@ -73,8 +78,8 @@
         div{
             cursor: pointer;
             &:hover{
-                background: #62baea;
-                color: #fff;
+                background: $aside-color;
+                color: black;
             }
         }
     }

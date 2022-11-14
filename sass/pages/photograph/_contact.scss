@@ -64,7 +64,10 @@
         align-items: flex-start;
         margin-top: 20px;
         button{
-                margin-top: 4%;
+            margin-top: 4%;
+            &:hover{
+                background-color: $secondary-color;
+            }
         }
         
         &-items{
