@@ -1,6 +1,6 @@
-  //Appel de l'api pour afficher les photographes
+//Appel de l'api pour afficher les photographes
  
- class ApiPhotographers {
+class ApiPhotographers {
     constructor(url) {
         this._url = url
     }

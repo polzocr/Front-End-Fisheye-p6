@@ -3,7 +3,7 @@
     dataElement les medias ou les photographes
 */
   
-  class App{
+class App{
     constructor(dataElement){
         this.api = new ApiFactory('../data/photographers.json', dataElement) //data appelées ici
         this.photographers = []   //stockés ici pour les photographes
@@ -15,8 +15,6 @@
         const dataApi = await this.api.get()
         this.photographers = dataApi
     }
-    
-         
 }
 
     

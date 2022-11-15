@@ -12,7 +12,7 @@ class Lightbox{
     //current element devient ce media
     //on appelle la fonction d'affichage
     showModal(id){
-        this.currentElement = this.listMedias.find(media => media.id == id);
+        this.currentElement = this.listMedias.find(media => media.id === id);
         this.display()
         
     }
@@ -22,7 +22,7 @@ class Lightbox{
         const body = document.querySelector('body')
         const image = document.querySelector('.content-picture')
         const video = document.querySelector('.content-video')
-        document.querySelector('.lightbox').classList.add("show") //affichage de la lightbox
+        document.querySelector('.lightbox').classList.add('show') //affichage de la lightbox
         document.querySelector('.lightbox').setAttribute('aria-hidden', 'false')
         if(this.currentElement.image !== undefined){ //si c'est une image
             image.src =`assets/images/${this.currentElement.photographerId}/${this.currentElement.image}`;
@@ -42,8 +42,8 @@ class Lightbox{
 
     //fonction qui permet de passer au media suivant
     next(){
-        const index = this.listMedias.findIndex(media => media.id == this.currentElement.id)
-        if(index == this.listMedias.length -1){ //si on est a la fin
+        const index = this.listMedias.findIndex(media => media.id === this.currentElement.id)
+        if(index === this.listMedias.length -1){ //si on est a la fin
             this.currentElement = this.listMedias[0] //retour au debut
         } else {
             this.currentElement = this.listMedias[index + 1]
@@ -52,8 +52,8 @@ class Lightbox{
     }
     //fonction qui permet de passer au media precedent
     previous(){
-        const index = this.listMedias.findIndex(media => media.id == this.currentElement.id)
-        if(index == 0){
+        const index = this.listMedias.findIndex(media => media.id === this.currentElement.id)
+        if(index === 0){
             this.currentElement = this.listMedias[this.listMedias.length - 1]
         } else {
             this.currentElement = this.listMedias[index - 1]
@@ -64,7 +64,7 @@ class Lightbox{
     //fermeture de la lightbox
     close(){
         const body = document.querySelector('body')
-        document.querySelector('.lightbox').classList.remove("show")
+        document.querySelector('.lightbox').classList.remove('show')
         body.classList.remove('hidden')
         body.setAttribute('aria-hidden', 'false')
         document.removeEventListener('keyup', this.eventKey) // on supprime les evenements au clavier
@@ -72,7 +72,8 @@ class Lightbox{
 
 
     //liste des elements claviers et leur fonction associée
-    eventKey = (e) => {
+    eventKey(e){
+        const mediaVideo = document.querySelector('.content-video')
         switch(e.key){
             case 'ArrowRight': 
                 this.next();
@@ -84,12 +85,11 @@ class Lightbox{
                 this.close()
                 break;
             case 'p': //on aimerait pouvoir lancer la vidéo des lappuie d'une seule touche
-                const video = document.querySelector('.content-video')
-                if(video){
-                    if(video.currentTime == 0 || video.paused || video.ended){
+                if(mediaVideo){
+                    if(mediaVideo.currentTime === 0 || mediaVideo.paused || mediaVideo.ended){
                         video.play()
-                    } else if(video.currentTime > 0 && !video.paused && !video.ended) {
-                        video.pause()
+                    } else if(mediaVideo.currentTime > 0 && !mediaVideo.paused && !mediaVideo.ended) {
+                        mediaVideo.pause()
                     }
                 }
                 break;
@@ -100,13 +100,13 @@ class Lightbox{
 
     //nos evenements next previous et close avec leurs bouton associé
     manageEvents(){
-        document.querySelector(".content-button.next").addEventListener('click', () => {
+        document.querySelector('.content-button.next').addEventListener('click', () => {
             this.next();
         })
-        document.querySelector(".content-button.previous").addEventListener('click', () => {
+        document.querySelector('.content-button.previous').addEventListener('click', () => {
             this.previous();
         })
-        document.querySelector(".content-button.close").addEventListener('click', () => {
+        document.querySelector('.content-button.close').addEventListener('click', () => {
             this.close();
         })
     }

@@ -21,8 +21,8 @@ class Photo {
         link.setAttribute('aria-label', 'ouverture gallerie avec ' + this.title)
         //creation image par card
         const img = document.createElement( 'img');
-        img.setAttribute("src", this.picture)
-        img.setAttribute("alt", this.title)
+        img.setAttribute('src', this.picture)
+        img.setAttribute('alt', this.title)
         link.appendChild(img);
         //ajoue dans larticle
         article.appendChild(link)
@@ -57,7 +57,7 @@ class Photo {
         })
         //incrementation des likes quand on appuie sur entrée
         icone.addEventListener('keydown', function(e){
-            if(e.key == 'Enter'){
+            if(e.key === 'Enter'){
                 that.totalLikes(this.previousElementSibling, icone)
             }
         })
@@ -75,7 +75,7 @@ class Photo {
     //ajustement des likes de chaque article
     totalLikes(element, icone){
         const pTotalLikes = document.querySelector('.number-likes p')
-        if(this.newLike == this.likes){ //si nb like est egal au nombre de like recupéré par lapi
+        if(this.newLike === this.likes){ //si nb like est egal au nombre de like recupéré par lapi
             this.newLike += 1;          //on ajoute un like
             element.textContent = this.newLike  //changement du html de larticle
             pTotalLikes.textContent = parseInt(pTotalLikes.textContent) + 1 //changement de l'html des likes totaux

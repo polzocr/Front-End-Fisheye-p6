@@ -12,15 +12,15 @@ class Index extends App{
     //pour savoir quelles données afficher
     async displayDataAccueil(){ 
         this.photographers.forEach((photographer) => {
-        const photographerModel = new PhotographerFactory(photographer, this.page); //appel du bon template
-        photographerModel.createTemplate(); //creation de l'affichage
+            const photographerModel = new PhotographerFactory(photographer, this.page); //appel du bon template
+            photographerModel.createTemplate(); //creation de l'affichage
         })
     } 
 
-   async main(){
-    await this.fetchData()
-    this.displayDataAccueil()
-   }
+    async main(){
+        await this.fetchData()
+        this.displayDataAccueil()
+    }
 
 }
 

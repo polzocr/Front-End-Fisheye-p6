@@ -2,7 +2,7 @@
 class Accueil {
     constructor(data){
         data && Object.assign(this, data)
-        this.section = document.querySelector(".photographer_section")
+        this.section = document.querySelector('.photographer_section')
     }
 
     //on recupere le bon chemin des images
@@ -16,17 +16,17 @@ class Accueil {
         
         //lien
         const link = document.createElement('a')
-        link.setAttribute("href", "photographer.html?id=" + this.id)
-        link.setAttribute("role", "link")
-        link.setAttribute("aria-label", "lien page " + this.name)
+        link.setAttribute('href', 'photographer.html?id=' + this.id)
+        link.setAttribute('role', 'link')
+        link.setAttribute('aria-label', 'lien page ' + this.name)
         
         article.appendChild(link)
 
 
         //creation et ajout image
         const img = document.createElement( 'img' );
-        img.setAttribute("src", this.picture)
-        img.setAttribute("alt", '')
+        img.setAttribute('src', this.picture)
+        img.setAttribute('alt', '')
         link.appendChild(img);
 
         //creation et ajout h2

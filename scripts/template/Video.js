@@ -25,7 +25,7 @@ class Video {
         const video = document.createElement( 'video');
         video.autoplay = false;
         video.muted = false;
-        video.setAttribute("src", this.picture)
+        video.setAttribute('src', this.picture)
         link.appendChild(video);
 
         article.appendChild(link)
@@ -59,7 +59,7 @@ class Video {
         })
         //incrementation des likes quand on appuie sur entrée
         icone.addEventListener('keydown', function(e){
-            if(e.key == 'Enter'){
+            if(e.key === 'Enter'){
                 that.totalLikes(this.previousElementSibling, icone)
             }
         })
@@ -80,7 +80,7 @@ class Video {
     //ajustement des likes de chaque article pareil que pour les photos (Photo.js ligne 75)
     totalLikes(element, icone){
         const pTotalLikes = document.querySelector('.number-likes p')
-        if(this.newLike == this.likes){
+        if(this.newLike === this.likes){
             this.newLike += 1;
             element.textContent = this.newLike
             pTotalLikes.textContent = parseInt(pTotalLikes.textContent) + 1

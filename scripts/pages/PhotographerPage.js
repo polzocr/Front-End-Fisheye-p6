@@ -58,16 +58,16 @@ class PhotographerPage extends App{
 
     //ouverture de la lightbox au clic d'une card
     setLightbox(template, id, lightbox){
-        template.querySelector('a').addEventListener('click', function(e){
+        template.querySelector('a').addEventListener('click', function(){
             lightbox.showModal(id) //methode showmodal qui affiche a partir de l'element cliqué
         })
     }
 
     //quelle type de tri recherchons nous ?
     whichSort(datas, sortType){
-        if(sortType == 'date'){
+        if(sortType === 'date'){
             return this.sortDate(datas)
-        } else if(sortType == 'title'){
+        } else if(sortType === 'title'){
             return this.sortTitle(datas)
         } else {
             return this.sortFamous(datas)

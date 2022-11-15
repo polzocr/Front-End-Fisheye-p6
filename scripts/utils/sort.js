@@ -1,17 +1,16 @@
 //c'est ici que l'on gere le menu de tri
 
-const dropdown = document.querySelector(".dropdown")
+const dropdown = document.querySelector('.dropdown')
 const date = document.getElementById('date')
 const famous = document.getElementById('famous')
 const title = document.getElementById('title')
 const popup = document.getElementById('text')
-const listbox = document.querySelector('.dropdown-options')
 
 
 //si on clique sur le bouton, le menu déroulant s'affiche
 popup.onclick = function() {
     addBorder()
-    dropdown.classList.toggle("active")
+    dropdown.classList.toggle('active')
     popup.ariaExpanded = true
 }
 
@@ -47,22 +46,22 @@ title.addEventListener('click', function(){
 
 //on change ici les elements du menu déroulant
 function changeText(value){
-  let text = document.querySelector('#text span')
-  text.textContent = value;
+    let text = document.querySelector('#text span')
+    text.textContent = value;
   
-  if(text.textContent == 'Date'){
-    date.classList.add('undisplayed')
-    famous.classList.remove('undisplayed')
-    title.classList.remove('undisplayed')
-  } else if(text.textContent == 'Popularité'){
-    famous.classList.add('undisplayed')
-    date.classList.remove('undisplayed')
-    title.classList.remove('undisplayed')
-  } else if(text.textContent == 'Titre'){
-    title.classList.add('undisplayed')
-    date.classList.remove('undisplayed')
-    famous.classList.remove('undisplayed')
-  }
+    if(text.textContent === 'Date'){
+        date.classList.add('undisplayed')
+        famous.classList.remove('undisplayed')
+        title.classList.remove('undisplayed')
+    } else if(text.textContent === 'Popularité'){
+        famous.classList.add('undisplayed')
+        date.classList.remove('undisplayed')
+        title.classList.remove('undisplayed')
+    } else if(text.textContent === 'Titre'){
+        title.classList.add('undisplayed')
+        date.classList.remove('undisplayed')
+        famous.classList.remove('undisplayed')
+    }
 }
 
 //on ajout des bordures aux bons elements pour séparer les deux elements du menu
@@ -70,7 +69,7 @@ function addBorder(){
     let value = document.querySelector('#text span').textContent
     const dateSpan = document.querySelector('#date span')
     const famousSpan = document.querySelector('#famous span')
-    if(value == 'Popularité' || value == 'Titre'){
+    if(value === 'Popularité' || value === 'Titre'){
         dateSpan.classList.add('bordered')
         famousSpan.classList.remove('bordered')
     } else {

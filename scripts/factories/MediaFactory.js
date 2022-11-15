@@ -3,9 +3,9 @@
 
 class MediaFactory {
     constructor(data){
-        if(data.hasOwnProperty('video')){
+        if(Object.prototype.hasOwnProperty.call(data, 'video')){
             return new Video(data)
-        } else if (data.hasOwnProperty('image')){
+        } else if (Object.prototype.hasOwnProperty.call(data, 'image')){
             return new Photo(data)
         } else {
             throw 'Erreurr ici-même'

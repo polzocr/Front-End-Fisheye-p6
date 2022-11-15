@@ -2,7 +2,7 @@
 class Photographer {
     constructor(data){
         data && Object.assign(this, data)
-        this.section = document.querySelector(".photograph-header")
+        this.section = document.querySelector('.photograph-header')
         this.main = document.querySelector('main')
     }
     
@@ -38,8 +38,8 @@ class Photographer {
 
         // creation et ajout image
         const img = document.createElement( 'img' );
-        img.setAttribute("src", this.picture)
-        img.setAttribute("alt", this.name)
+        img.setAttribute('src', this.picture)
+        img.setAttribute('alt', this.name)
 
         //aside prix par jour
         const pPrice = document.createElement('p')
