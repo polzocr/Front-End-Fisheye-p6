@@ -1,19 +1,21 @@
+//affichage de tous les photographes
 class Accueil {
     constructor(data){
         data && Object.assign(this, data)
         this.section = document.querySelector(".photographer_section")
     }
 
+    //on recupere le bon chemin des images
     get picture(){
         return `assets/photographers/${this.portrait}`;
     }
 
+    //creation des cards des photographes
     createTemplate(){
         const article = document.createElement( 'article' );
         
-
+        //lien
         const link = document.createElement('a')
-        // let url = new URL("photographer.html")
         link.setAttribute("href", "photographer.html?id=" + this.id)
         link.setAttribute("role", "link")
         link.setAttribute("aria-label", "lien page " + this.name)
@@ -32,19 +34,22 @@ class Accueil {
         h2.textContent = this.name;
         link.appendChild(h2);
 
-
+        //creation et ajout ville
         const pCity = document.createElement('p')
         pCity.textContent = this.city + ', ' + this.country;
         article.appendChild(pCity);
         
+        //creation et ajout slogan
         const pTagline = document.createElement('p')
         pTagline.textContent = this.tagline;
         article.appendChild(pTagline);
         
+        //creation et ajout tarif
         const pPrice = document.createElement('p')
         pPrice.textContent = this.price + '€/jour';
         article.appendChild(pPrice);
         
-       this.section.appendChild(article);
+        //creation finale de larticle dans la section choisie dans le constructeur
+        this.section.appendChild(article); 
     }
 }

@@ -1,3 +1,5 @@
+ //Appel de l'api pour afficher les médias
+ 
  class ApiMedia {
     constructor(url) {
         this._url = url

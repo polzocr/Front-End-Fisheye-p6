@@ -1,3 +1,6 @@
+//factory qui appelle les templates soit pour les photos 
+//soit pour les vidéos
+
 class MediaFactory {
     constructor(data){
         if(data.hasOwnProperty('video')){
@@ -5,7 +8,7 @@ class MediaFactory {
         } else if (data.hasOwnProperty('image')){
             return new Photo(data)
         } else {
-            throw 'Erreurr ici-même, thomasse'
+            throw 'Erreurr ici-même'
         }
     }
 

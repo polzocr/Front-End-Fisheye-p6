@@ -1,3 +1,5 @@
+//c'est ici que l'on gere le menu de tri
+
 const dropdown = document.querySelector(".dropdown")
 const date = document.getElementById('date')
 const famous = document.getElementById('famous')
@@ -6,6 +8,7 @@ const popup = document.getElementById('text')
 const listbox = document.querySelector('.dropdown-options')
 
 
+//si on clique sur le bouton, le menu déroulant s'affiche
 popup.onclick = function() {
     addBorder()
     dropdown.classList.toggle("active")
@@ -13,14 +16,17 @@ popup.onclick = function() {
 }
 
 
+/*On a ici trois evenement, selon sur quel bouton on appuie : 
+date, popularité ou titre
+*/
 
 date.addEventListener('click', function(){
     changeText('Date')
     addBorder()
     popup.ariaExpanded = false
     dropdown.classList.remove('active')
-    const dateMedia = new PhotographerPage('media')
-    dateMedia.displayMedia('date')
+    const dateMedia = new PhotographerPage('media') //on appel nos datas media
+    dateMedia.displayMedia('date') //et on les affiche trier par date
 })
 famous.addEventListener('click', function(){
     changeText('Popularité')
@@ -28,7 +34,7 @@ famous.addEventListener('click', function(){
     popup.ariaExpanded = false
     dropdown.classList.remove('active')
     const famousMedia = new PhotographerPage('media')
-    famousMedia.displayMedia('famous')
+    famousMedia.displayMedia('famous') //et on les affiche trier par popularité
 })
 title.addEventListener('click', function(){
     changeText('Titre')
@@ -36,9 +42,10 @@ title.addEventListener('click', function(){
     popup.ariaExpanded = false
     dropdown.classList.remove('active')
     const titleMedia = new PhotographerPage('media')
-    titleMedia.displayMedia('title')
+    titleMedia.displayMedia('title') //et on les affiche trier par titre
 })
-  
+
+//on change ici les elements du menu déroulant
 function changeText(value){
   let text = document.querySelector('#text span')
   text.textContent = value;
@@ -58,6 +65,7 @@ function changeText(value){
   }
 }
 
+//on ajout des bordures aux bons elements pour séparer les deux elements du menu
 function addBorder(){
     let value = document.querySelector('#text span').textContent
     const dateSpan = document.querySelector('#date span')
