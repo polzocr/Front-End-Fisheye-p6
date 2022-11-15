@@ -37,10 +37,12 @@ class Photographer {
 
         const pPrice = document.createElement('p')
         pPrice.textContent = this.price + '€ / jour';
+        
 
         const divLikes = document.createElement('div')
         const pIcone = document.createElement('p')
         const icone = document.createElement('i')
+        icone.setAttribute('aria-hidden', 'true')
         divLikes.setAttribute('class', 'number-likes')
         pIcone.textContent = ''
         icone.setAttribute('class', 'far fa-heart')
@@ -49,6 +51,8 @@ class Photographer {
         divLikes.appendChild(icone)
         aside.appendChild(divLikes)
         aside.appendChild(pPrice);
+        aside.setAttribute('role', 'complementary')
+        aside.setAttribute('aria-label', 'nombre de likes et prix des prestations')
 
         bigDiv.appendChild(firstDiv);
         this.section.insertBefore(bigDiv, this.section.firstChild);

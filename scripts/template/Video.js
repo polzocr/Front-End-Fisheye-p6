@@ -23,8 +23,6 @@ class Video {
         video.autoplay = false;
         video.muted = false;
         video.setAttribute("src", this.picture)
-        video.setAttribute("alt", this.title)
-        video.setAttribute("type", 'video/mp4')
         link.appendChild(video);
 
         article.appendChild(link)

@@ -17,18 +17,21 @@ class Lightbox{
         const image = document.querySelector('.content-picture')
         const video = document.querySelector('.content-video')
         document.querySelector('.lightbox').classList.add("show")
+        document.querySelector('.lightbox').setAttribute('aria-hidden', 'false')
         if(this.currentElement.image !== undefined){
             image.src =`assets/images/${this.currentElement.photographerId}/${this.currentElement.image}`;
-            image.style.display = 'initial'
-            video.style.display = 'contents'
+            image.classList.add('show-media')
+            video.classList.remove('show-media')
         }else {
             video.src =`assets/videos/${this.currentElement.photographerId}/${this.currentElement.video}`
-                image.style.display = 'none'
-                video.style.display = 'block'
+                image.classList.remove('show-media')
+                video.classList.add('show-media')
         }
         document.querySelector('.content-title').textContent = this.currentElement.title;
-        body.style.overflow = 'hidden';
+        body.classList.add('hidden')
+        body.setAttribute('aria-hidden', 'true')
         document.addEventListener('keyup', this.eventKey)
+        video? video.focus() : image.focus()
     }
 
     next(){
@@ -54,7 +57,8 @@ class Lightbox{
     close(){
         const body = document.querySelector('body')
         document.querySelector('.lightbox').classList.remove("show")
-        body.style.overflow = 'initial';
+        body.classList.remove('hidden')
+        body.setAttribute('aria-hidden', 'false')
         document.removeEventListener('keyup', this.eventKey)
     }
 
@@ -68,6 +72,16 @@ class Lightbox{
                 break;
             case 'Escape':
                 this.close()
+                break;
+            case 'p':
+                const video = document.querySelector('.content-video')
+                if(video){
+                    if(video.currentTime == 0 || video.paused || video.ended){
+                        video.play()
+                    } else if(video.currentTime > 0 && !video.paused && !video.ended) {
+                        video.pause()
+                    }
+                }
                 break;
             default:
                 break;

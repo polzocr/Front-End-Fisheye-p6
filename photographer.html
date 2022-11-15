@@ -57,7 +57,7 @@
           <p id="navigationTitle">Trier par</p>
           <div class="dropdown">
               <button id="text" class="contact_button dropdown-button text" role="button" aria-label="choix du tri" aria-haspopup="listbox" aria-expanded="false"><span>Date</span></button>
-              <div class="dropdown-options" role="listbox"  aria-selected="false">
+              <div class="dropdown-options" role="listbox">
                 <button id="date" class="contact_button dropdown-button undisplayed" tabindex="0" role="button" aria-label="trier par date" ><span>Date</span></button>
                 <button id="famous" class="contact_button dropdown-button" tabindex="0" role="button" aria-label="trier par popularité"><span>Popularité</span></button>
                 <button id="title" class="contact_button dropdown-button" tabindex="0" role="button" aria-label="trier par titre"><span>Titre</span></button>
@@ -66,13 +66,14 @@
         </div>
       </section>
       
-      <section class="lightbox">
+      <section class="lightbox" role="region" aria-label="lightbox medias">
         <div class="content">
-          <button class="content-button previous"></button>
-          <img src="" alt="" class="content-picture">
-          <video controls src="" alt="" type="video/mp4" class="content-video"></video>
-          <button class="content-button next"></button>
-          <button class="content-button close"> + </button>
+          <button class="content-button previous" role="button" aria-label="Précédent" tabindex="0"></button>
+          <img src="" alt="" class="content-picture" tabindex="0">
+          <video controls src="" alt="" type="video/mp4" class="content-video" tabindex="0"></video>
+          <span class="sr-only">Appuyer sur la touche 'p' pour lancer la vidéo</span>
+          <button class="content-button next" role="button" aria-label="Suivant" tabindex="0"></button>
+          <button class="content-button close" role="button" aria-label="Fermer" tabindex="0"> + </button>
           <p class="content-title"></p>
         </div>
       </section>

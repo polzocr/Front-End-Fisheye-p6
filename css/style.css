@@ -502,6 +502,7 @@ aside .number-likes i {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: none;
 }
 .content-video {
   display: none;
@@ -550,6 +551,23 @@ aside .number-likes i {
   align-items: center;
   justify-content: center;
   transform: rotate(45deg);
+}
+
+.sr-only {
+  height: 1px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: -10000px;
+  width: 1px;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.show-media {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
