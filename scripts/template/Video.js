@@ -10,13 +10,14 @@ class Video {
     }
 
     createTemplateMedia(){
-        console.log(this.video)
         const article = document.createElement('article');
         article.classList.add('media');
 
         const link = document.createElement('a')
         link.setAttribute('href', '#')
         link.setAttribute('class', 'media-video')
+        link.setAttribute('role', 'button')
+        link.setAttribute('aria-label', 'ouverture gallerie avec ' + this.title)
 
         const video = document.createElement( 'video');
         video.autoplay = false;
@@ -45,9 +46,17 @@ class Video {
 
         const icone = document.createElement('i')
         icone.setAttribute('class', 'far fa-heart')
+        icone.setAttribute('role', 'button')
+        icone.setAttribute('aria-label', 'aimer le media')
+        icone.setAttribute('tabindex', '0')
         const that = this;
         icone.addEventListener('click', function(){
             that.totalLikes(this.previousElementSibling, icone)
+        })
+        icone.addEventListener('keydown', function(e){
+            if(e.key == 'Enter'){
+                that.totalLikes(this.previousElementSibling, icone)
+            }
         })
         divFooter.appendChild(icone)
 

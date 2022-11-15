@@ -14,6 +14,8 @@ class Photo {
 
         const link = document.createElement('a')
         link.setAttribute('href', '#')
+        link.setAttribute('role', 'button')
+        link.setAttribute('aria-label', 'ouverture gallerie avec ' + this.title)
 
         const img = document.createElement( 'img');
         img.setAttribute("src", this.picture)
@@ -43,10 +45,19 @@ class Photo {
 
         const icone = document.createElement('i')
         icone.setAttribute('class', 'far fa-heart')
+        icone.setAttribute('role', 'button')
+        icone.setAttribute('aria-label', 'aimer le media')
+        icone.setAttribute('tabindex', '0')
         const that = this;
         icone.addEventListener('click', function(){
             that.totalLikes(this.previousElementSibling, icone)
         })
+        icone.addEventListener('keydown', function(e){
+            if(e.key == 'Enter'){
+                that.totalLikes(this.previousElementSibling, icone)
+            }
+        })
+
         divFooter.appendChild(icone)
 
         footer.appendChild(divFooter)

@@ -34,6 +34,8 @@ class PhotographerPage extends App{
             const mediaModel = new MediaFactory(media)
             const template = mediaModel.createTemplateMedia();
             sectionMedia.appendChild(template)
+            sectionMedia.setAttribute('role', 'region')
+            sectionMedia.setAttribute('aria-label', 'medias')
             this.setLightbox(template, mediaModel.id, lightbox)
 
         })
