@@ -70,17 +70,15 @@ class Lightbox{
         document.removeEventListener('keyup', this.eventKey) // on supprime les evenements au clavier
     }
 
-    test(){
-        console.log('la')
-    }
+
 
 
     //liste des elements claviers et leur fonction associée
-    eventKey(e){
+    eventKey = (e) => {
         const mediaVideo = document.querySelector('.content-video')
         switch(e.key){
             case 'ArrowRight': 
-                this.test();
+                this.next();
                 break;
             case 'ArrowLeft':
                 this.previous()
