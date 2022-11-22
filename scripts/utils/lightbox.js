@@ -70,13 +70,17 @@ class Lightbox{
         document.removeEventListener('keyup', this.eventKey) // on supprime les evenements au clavier
     }
 
+    test(){
+        console.log('la')
+    }
+
 
     //liste des elements claviers et leur fonction associée
     eventKey(e){
         const mediaVideo = document.querySelector('.content-video')
         switch(e.key){
             case 'ArrowRight': 
-                this.next();
+                this.test();
                 break;
             case 'ArrowLeft':
                 this.previous()
@@ -87,7 +91,7 @@ class Lightbox{
             case 'p': //on aimerait pouvoir lancer la vidéo des lappuie d'une seule touche
                 if(mediaVideo){
                     if(mediaVideo.currentTime === 0 || mediaVideo.paused || mediaVideo.ended){
-                        video.play()
+                        mediaVideo.play()
                     } else if(mediaVideo.currentTime > 0 && !mediaVideo.paused && !mediaVideo.ended) {
                         mediaVideo.pause()
                     }
