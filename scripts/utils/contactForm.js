@@ -30,8 +30,12 @@ function closeModal() {
 document.addEventListener('keydown', (e) => {
     const tab = e.key === 'Tab';
     const escape = e.key === 'Escape';
-    if (!escape && !tab){
-        return
+    const enter = e.key === 'Enter';
+    // if (!escape && !tab){
+    //     return
+    // }
+    if(enter){
+        sendData()
     }
     if (escape) { 
         closeModal();
